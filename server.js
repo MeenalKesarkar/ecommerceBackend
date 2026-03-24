@@ -43,7 +43,7 @@ app.use('/api/payment-summary', paymentSummaryRoutes);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Catch-all route to serve index.html for any unmatched routes
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   const indexPath = path.join(__dirname, 'dist', 'index.html');
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
